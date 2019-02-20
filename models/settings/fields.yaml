@@ -1,0 +1,76 @@
+tabs:
+  fields:
+    enable_title:
+      label: octcms.seo::lang.settings.tab_settings.site
+      comment: octcms.seo::lang.settings.tab_settings.site_comment
+      type: switch
+      span: left
+      tab: octcms.seo::lang.settings.tab_settings.label
+
+    enable_canonical_url:
+      label: octcms.seo::lang.settings.tab_settings.canonical
+      type: switch
+      comment: octcms.seo::lang.settings.tab_settings.canonical_comment
+      tab: octcms.seo::lang.settings.tab_settings.label
+      span: right
+
+    title:
+      label: octcms.seo::lang.settings.tab_settings.sitename
+      commentAbove: octcms.seo::lang.settings.tab_settings.sitename_comment_above
+      span: left
+      comment: octcms.seo::lang.settings.tab_settings.sitename_comment
+      tab: octcms.seo::lang.settings.tab_settings.label
+      placeholder: octcms.seo::lang.settings.tab_settings.sitename_placeholder
+
+    title_position:
+      label: octcms.seo::lang.settings.tab_settings.title_position
+      type: radio
+      span: right
+      tab: octcms.seo::lang.settings.tab_settings.label
+      comment: octcms.seo::lang.settings.tab_settings.title_position_comment
+      options:
+        prefix: octcms.seo::lang.settings.tab_settings.title_position_prefix
+        suffix: octcms.seo::lang.settings.tab_settings.title_position_suffix
+
+    content:
+      type: hint
+      path: $/anandpatel/seoextension/models/settings/_other_tags_hint.htm
+      tab: octcms.seo::lang.settings.tab_settings.label
+
+    other_tags:
+      label: octcms.seo::lang.settings.tab_settings.other_tags
+      type: codeeditor
+      tab: octcms.seo::lang.settings.tab_settings.label
+      commentAbove: octcms.seo::lang.settings.tab_settings.other_tags_comment_above
+      comment: octcms.seo::lang.settings.tab_settings.other_tags_comment
+
+    og_tags_description:
+      type: hint
+      path: $/anandpatel/seoextension/models/settings/_og_tags_description.htm
+      tab: octcms.seo::lang.settings.tab_og.label
+
+    enable_og_tags:
+      label: octcms.seo::lang.settings.tab_og.og
+      type: switch
+      comment: octcms.seo::lang.settings.tab_og.og_comment
+      tab: octcms.seo::lang.settings.tab_og.label
+
+    og_sitename:
+      label: octcms.seo::lang.settings.tab_og.sitename
+      type: text
+      comment: octcms.seo::lang.settings.tab_og.sitename_comment
+      tab: octcms.seo::lang.settings.tab_og.label
+
+    og_fb_appid:
+      label: octcms.seo::lang.settings.tab_og.fb
+      comment: octcms.seo::lang.settings.tab_og.fb_comment
+      type: text
+      span: left
+      tab: octcms.seo::lang.settings.tab_og.label
+
+
+
+
+
+
+
