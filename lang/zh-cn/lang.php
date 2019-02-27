@@ -37,6 +37,14 @@ return [
         ],
     ],
     'component' => [
+        'tag' => [
+            'name' => 'SEO Blog Tag',
+            'description' => 'Inject SEO Fields of blog tag'
+        ],
+        'category' => [
+            'name' => 'SEO Blog Category',
+            'description' => 'Inject SEO Fields of blog category'
+        ],
         'blog' => [
             'name' => 'SEO Blog Post',
             'description' => 'Inject SEO Fields of blog post'

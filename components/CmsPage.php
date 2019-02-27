@@ -18,6 +18,9 @@ class CmsPage extends ComponentBase
     public $robot_index;
     public $robot_follow;
     public $hasBlog;
+    public $hasCategory;
+    public $hasTag;
+    public $hasSearch;
 
     public $ogTitle;
     public $ogUrl;
@@ -46,12 +49,22 @@ class CmsPage extends ComponentBase
         $theme = Theme::getActiveTheme();
         $page = Page::load($theme,$this->page->baseFileName);
         $this->page["hasBlog"] = false;
+        $this->page["hasCategory"] = false;
+        $this->page["hasTag"] = false;
 
-        if(!$page->hasComponent("blogPost"))
+        if($page->hasComponent("blogPost"))
         {
-            $this->seo_title = $this->page["seo_title"] = empty($this->page->meta_title) ? $this->page->title : $this->page->meta_title;
-            $this->seo_description = $this->page["seo_description"] = $this->page->meta_description;
-            $this->seo_keywords = $this->page["seo_keywords"] = $this->page->seo_keywords;
+            $this->hasBlog = $this->page["hasBlog"] = true;
+        } elseif ($page->hasComponent("postsWithTag")){
+            $this->hasTag = $this->page["hasTag"] = true;
+        } elseif ($page->hasComponent("SeoCategory")){
+            $this->hasCategory = $this->page["hasCategory"] = true;
+        } elseif ($page->hasComponent("SeoSearch")){
+            $this->hasSearch = $this->page["hasSearch"] = true;
+        } else {
+            $this->seo_title = $this->page["seo_title"] = empty($this->page->meta_title) ? $theme->title : $this->page->meta_title;
+            $this->seo_description = $this->page["seo_description"] = empty($this->page->meta_description) ? $theme->description : $this->page->meta_description;
+            $this->seo_keywords = $this->page["seo_keywords"] = empty($this->page->seo_keywords) ? $theme->keywords : $this->page->seo_keywords;
             $this->canonical_url = $this->page["canonical_url"] = $this->page->canonical_url;
             $this->redirect_url = $this->page["redirect_url"] = $this->page->redirect_url;
             $this->robot_follow = $this->page["robot_follow"] = $this->page->robot_follow;
@@ -67,10 +80,6 @@ class CmsPage extends ComponentBase
                 $this->ogSiteName = $settings->og_sitename;
                 $this->ogFbAppId = $settings->og_fb_appid;
             }
-
-        }
-        else{
-            $this->hasBlog = $this->page["hasBlog"] = true;
         }
     }
 

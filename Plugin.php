@@ -36,6 +36,9 @@ class Plugin extends PluginBase
             'Octcms\Seo\Components\BlogPost' => 'SeoBlogPost',
             'Octcms\Seo\Components\StaticPage' => 'SeoStaticPage',
             'Octcms\Seo\Components\CmsPage' => 'SeoCmsPage',
+            'Octcms\Seo\Components\Tag' => 'SeoTag',
+            'Octcms\Seo\Components\Category' => 'SeoCategory',
+            'Octcms\Seo\Components\Search' => 'SeoSearch',
         ];
     }
 
@@ -217,12 +220,12 @@ class Plugin extends PluginBase
 
             $widget->addFields(
                 [
-                    'settings[seo_keywords]' => [
+                    'settings[meta_keywords]' => [
                         'label'   => 'Meta Keywords',
                         'type'    => 'textarea',
                         'tab'     => 'cms::lang.editor.meta',
                         'size'    => 'tiny',
-                        'placeholder' => "hello"
+                        'placeholder' => ""
                     ],
                     'settings[canonical_url]' => [
                         'label'   => 'Canonical URL',

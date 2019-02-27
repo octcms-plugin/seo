@@ -1,0 +1,10 @@
+{% put meta %}
+{% default %}
+{% set search = __SELF__.property('search') %}
+{% set title = search | generateTitle %}
+{% set keywords = this.page.meta_keywords|length==0  ? this.theme.keywords : this.page.meta_keywords %}
+{% set description = this.page.meta_description|length==0 ? this.theme.description : this.page.meta_description %}
+<title>{{ title }}</title>
+<meta name="description" content="{{description}}">
+<meta name="keywords" content="{{keywords}}">
+{% endput %}
